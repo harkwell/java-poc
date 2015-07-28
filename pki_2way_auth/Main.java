@@ -79,7 +79,9 @@ public class Main
 			x509.getSigAlgName());
 		System.out.printf("signature OID: %s\n", x509.getSigAlgOID());
 		System.out.printf("signature parms: %s\n",
-			new String(x509.getSigAlgParams()));
+			(x509.getSigAlgParams() != null)
+				? new String(x509.getSigAlgParams())
+				: "no sig alg params");
 		try {
 			x509.checkValidity();
 		}

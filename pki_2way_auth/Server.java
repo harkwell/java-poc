@@ -30,12 +30,16 @@ public class Server
 
 	private static void startServer(SSLServerSocket socket) throws Exception
 	{
-		// socket.setNeedClientAuth(true);
+		Socket client = null;
 		String content = null;
-		Socket client = socket.accept();
-		PrintWriter writer = new PrintWriter(new BufferedWriter(
+		PrintWriter writer = null;
+		BufferedReader reader = null;
+
+		socket.setNeedClientAuth(true);
+		client = socket.accept();
+		writer = new PrintWriter(new BufferedWriter(
 			new OutputStreamWriter(client.getOutputStream())));
-		BufferedReader reader = new BufferedReader(
+		reader = new BufferedReader(
 			new InputStreamReader(client.getInputStream()));
 
 		while ((content = reader.readLine()) != null) {
