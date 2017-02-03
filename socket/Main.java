@@ -1,7 +1,7 @@
 import java.net.Socket;
 
 /**
- * Proof of Concept (Poc) to check availability of a port on a server.
+ * Proof of Concept (PoC) to check availability of a port on a server.
  * cp Main.java /tmp
  * javac /tmp/Main.java
  * java -cp /tmp Main localhost 80

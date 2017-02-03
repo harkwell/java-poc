@@ -5,7 +5,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * Proof of Concept (Poc) to implement an echo server in java.
+ * Proof of Concept (PoC) to implement a single-threaded echo server in java.
  * cp Main.java /tmp
  * javac /tmp/Main.java
  * java -cp /tmp Main 7777 2>/dev/null
@@ -19,7 +19,7 @@ public class Main
 	{
 		int port = (args.length > 0) ? Integer.parseInt(args[0]) : PORT;
 		ServerSocket socket = new ServerSocket(port);
-		System.err.println("Started server on port "+port);
+		System.err.println("Started echo server on port "+port);
 
 		while (true) {
 			String input = null;

@@ -4,7 +4,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * Proof of Concept (Poc) to pass data from one local IP port to destination.
+ * Proof of Concept (PoC) to pass data from one local IP port to destination.
  * cp Main.java /tmp
  * javac /tmp/Main.java
  * java -cp /tmp Main 4444 localhost 80

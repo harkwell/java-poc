@@ -3,7 +3,7 @@ import java.io.BufferedReader;
 import java.net.URL;
 
 /**
- * Proof of Concept (Poc) to connect and read from a socket expressed as a URL.
+ * Proof of Concept (PoC) to connect and read from a socket expressed as a URL.
  * cp Main.java /tmp
  * javac /tmp/Main.java
  * java -cp /tmp Main https://www.google.com/

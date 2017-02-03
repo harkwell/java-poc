@@ -2,7 +2,7 @@ import java.lang.management.GarbageCollectorMXBean;
 import java.lang.management.ManagementFactory;
 
 /**
- * This POC shows how to show information on the garbage collectors.
+ * This PoC shows how to show information for the garbage collectors.
  *
  * cp Main.java /tmp
  * javac /tmp/Main.java 

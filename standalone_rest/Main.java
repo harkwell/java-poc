@@ -12,8 +12,22 @@ import java.util.HashSet;
 
 /**
  * mkdir -p /tmp/apis && cp Main.java /tmp/apis
- * mvn deps: com.sun.jersey:jersey-server, com.sun.jersey:jersey-grizzly2
- * export CLASSPATH=/tmp:/home/khall/.m2/repository/com/sun/jersey/jersey-server/1.16/jersey-server-1.16.jar:/home/khall/.m2/repository/com/sun/jersey/jersey-grizzly2/1.16/jersey-grizzly2-1.16.jar:/home/khall/.m2/repository/org/glassfish/grizzly/grizzly-http-server/2.2.16/grizzly-http-server-2.2.16.jar:/home/khall/.m2/repository/com/sun/jersey/jersey-core/1.16/jersey-core-1.16.jar:/home/khall/.m2/repository/asm/asm/3.1/asm-3.1.jar:/home/khall/.m2/repository/org/glassfish/grizzly/grizzly-framework/2.2.16/grizzly-framework-2.2.16.jar:/home/khall/.m2/repository/org/glassfish/grizzly/grizzly-http/2.2.16/grizzly-http-2.2.16.jar
+ * LIST="
+ *    com.sun.jersey:jersey-server:1.19.3
+ *    com.sun.jersey:jersey-grizzly2:1.19.3
+ *    org.glassfish.grizzly:grizzly-http-server:2.3.28
+ *    org.glassfish.grizzly:grizzly-framework:2.3.28
+ *    org.glassfish.grizzly:grizzly-http:2.3.28
+ *    com.sun.jersey:jersey-core:1.19.3
+ *    javax.ws.rs:javax.ws.rs-api:2.0.1
+ *    asm:asm:3.3.1
+ * "
+ * for x in $LIST; do
+ *    mvn org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
+ *       -DrepoUrl=https://mvnrepository.com/ \
+ *       -Dartifact=$x
+ * done
+ * export CLASSPATH=/tmp:$HOME/.m2/repository/com/sun/jersey/jersey-server/1.19.3/jersey-server-1.19.3.jar:$HOME/.m2/repository/com/sun/jersey/jersey-grizzly2/1.19.3/jersey-grizzly2-1.19.3.jar:$HOME/.m2/repository/org/glassfish/grizzly/grizzly-http-server/2.3.28/grizzly-http-server-2.3.28.jar:$HOME/.m2/repository/com/sun/jersey/jersey-core/1.19.3/jersey-core-1.19.3.jar:$HOME/.m2/repository/asm/asm/3.3.1/asm-3.3.1.jar:$HOME/.m2/repository/org/glassfish/grizzly/grizzly-framework/2.3.28/grizzly-framework-2.3.28.jar:$HOME/.m2/repository/org/glassfish/grizzly/grizzly-http/2.3.28/grizzly-http-2.3.28.jar:$HOME/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar
  * javac /tmp/apis/Main.java
  * java apis.Main
  * curl -i -X GET http://localhost:8080/v1/apis/foo
@@ -23,7 +37,7 @@ public class Main
 	public static final String DEF_URL = "http://localhost:8080";
 
 	@Path("/v1/apis")
-	public staic class Ctrl
+	public static class Ctrl
 	{
 		@GET
 		@Path("/foo")

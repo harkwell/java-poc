@@ -2,7 +2,7 @@ import java.lang.reflect.Field;
 import sun.misc.Unsafe;
 
 /**
- * This POC shows how to retrieve the actual physical memory address for an
+ * This PoC shows how to retrieve the actual physical memory address for an
  * object.
  */
 public class Main
