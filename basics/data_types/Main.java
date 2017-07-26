@@ -60,6 +60,27 @@ public class Main
 		}
 	}
 
+	/**
+	 * This is a static nested class.  Using static allows classes external
+	 * to this file access to it.  A member class is an inner class
+	 * (defined within a class) that is not static and only available to
+	 * this file.  A local class is one that is defined within a method
+	 * (like a variable).  An anonymous class is one that cannot be
+	 * instantiated directly with new().  It must be extended.
+	 *
+	 * Access modifiers (public,protected,private,default) behave like:
+	 *
+	 *            | Class | Package | Subclass | Subclass | World
+	 *            |       |         |(same pkg)|(diff pkg)| 
+	 * public     |   +   |    +    |    +     |     +    |   +     
+	 * protected  |   +   |    +    |    +     |     +    |         
+	 * <none>     |   +   |    +    |    +     |          |    
+	 * private    |   +   |         |          |          |    
+	 *
+	 * + : accessible
+	 * blank : not accessible
+	 * 
+	 */
 	public static class Foo
 	{
 		private int val = 7;
