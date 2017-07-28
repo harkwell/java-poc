@@ -11,6 +11,8 @@ import java.util.Set;
 import java.util.HashSet;
 
 /**
+ * POC_MAVEN_REPO=/tmp/foo
+ * rm -rf $POC_MAVEN_REPO
  * mkdir -p /tmp/apis && cp Main.java /tmp/apis
  * LIST="
  *    com.sun.jersey:jersey-server:1.19.3
@@ -23,11 +25,12 @@ import java.util.HashSet;
  *    asm:asm:3.3.1
  * "
  * for x in $LIST; do
- *    mvn org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
+ *    mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
+ *       org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
  *       -DrepoUrl=https://mvnrepository.com/ \
  *       -Dartifact=$x
  * done
- * export CLASSPATH=/tmp:$HOME/.m2/repository/com/sun/jersey/jersey-server/1.19.3/jersey-server-1.19.3.jar:$HOME/.m2/repository/com/sun/jersey/jersey-grizzly2/1.19.3/jersey-grizzly2-1.19.3.jar:$HOME/.m2/repository/org/glassfish/grizzly/grizzly-http-server/2.3.28/grizzly-http-server-2.3.28.jar:$HOME/.m2/repository/com/sun/jersey/jersey-core/1.19.3/jersey-core-1.19.3.jar:$HOME/.m2/repository/asm/asm/3.3.1/asm-3.3.1.jar:$HOME/.m2/repository/org/glassfish/grizzly/grizzly-framework/2.3.28/grizzly-framework-2.3.28.jar:$HOME/.m2/repository/org/glassfish/grizzly/grizzly-http/2.3.28/grizzly-http-2.3.28.jar:$HOME/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar
+ * export CLASSPATH=/tmp:$POC_MAVEN_REPO/com/sun/jersey/jersey-server/1.19.3/jersey-server-1.19.3.jar:$POC_MAVEN_REPO/com/sun/jersey/jersey-grizzly2/1.19.3/jersey-grizzly2-1.19.3.jar:$POC_MAVEN_REPO/org/glassfish/grizzly/grizzly-http-server/2.3.28/grizzly-http-server-2.3.28.jar:$POC_MAVEN_REPO/com/sun/jersey/jersey-core/1.19.3/jersey-core-1.19.3.jar:$POC_MAVEN_REPO/asm/asm/3.3.1/asm-3.3.1.jar:$POC_MAVEN_REPO/org/glassfish/grizzly/grizzly-framework/2.3.28/grizzly-framework-2.3.28.jar:$POC_MAVEN_REPO/org/glassfish/grizzly/grizzly-http/2.3.28/grizzly-http-2.3.28.jar:$POC_MAVEN_REPO/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar
  * javac /tmp/apis/Main.java
  * java apis.Main
  * curl -i -X GET http://localhost:8080/v1/apis/foo
