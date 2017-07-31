@@ -9,18 +9,21 @@ import org.aspectj.lang.annotation.After;
 @Aspect
 public class MyAspect
 {
-	@Pointcut("execution(* com.khallware.ioc.Main.main(..))")
-	public void mypointcut() {}
+	@Pointcut("@annotation(MyAnnotation)")
+	public void mypointcut1() {}
 
-	@Before("mypointcut()")
+	@Pointcut("execution(* *(..))")
+	public void mypointcut2() {}
+
+	@Before("mypointcut1() && mypointcut2()")
 	public void before(JoinPoint jp)
 	{
-		System.out.println("before mypointcut(): "+jp.toLongString());
+		System.out.println("MyAspect: @Before: "+jp.toLongString());
 	}
 
-	@After("mypointcut()")
+	@After("mypointcut1() && mypointcut2()")
 	public void after(JoinPoint jp)
 	{
-		System.out.println("after mypointcut(): "+jp.toLongString());
+		System.out.println("MyAspect: @After: "+jp.toLongString());
 	}
 }
