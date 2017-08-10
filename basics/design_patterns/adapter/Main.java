@@ -1,7 +1,7 @@
 package com.khallware.patterns.adapter;
 
 /**
- * The adapter pattern solves the problem of one or more disparate
+ * The adapter pattern solves the problem of one or more existing disparate
  * interfaces being used interchangably through a unifying component.
  * This pattern is also known as: wrapper and translator.
  *
