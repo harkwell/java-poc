@@ -3,7 +3,7 @@ package com.khallware.hibernate;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
@@ -15,7 +15,7 @@ public class Repo
 
 	public Repo() throws Exception
 	{
-		factory = new AnnotationConfiguration()
+		factory = new Configuration()
 			.configure()
 			.addAnnotatedClass(Item.class)
 			.buildSessionFactory();
