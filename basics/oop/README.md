@@ -1,4 +1,4 @@
-Khallware (Java OOD/OOP Proof-of-Concepts)
+Khallware (Java OOD/OOP Proofs-of-Concept)
 =================
 Overview
 ---------------
