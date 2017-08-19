@@ -39,8 +39,6 @@ Java Authorization Service Provider Contract for Containers
 Java EE Application Deployment (Optional)
 Java EE Management
 Debugging Support for Other Languages
-Java Architecture for XML Binding (JAXB)
-Java API for XML Processing (JAXP)
 Java Database Connectivity
 Java Management Extensions (JMX)
 JavaBeans Activation Framework (JAF)
