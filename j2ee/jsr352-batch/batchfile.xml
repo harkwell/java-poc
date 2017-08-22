@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<job id="AssembleJob"
+        xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/jobXML_1_0.xsd"
+        version="1.0">
+    <step id="assembleHardware" >
+        <!-- item-count indicates the num of times read-ps-write is called -->
+        <chunk item-count="10">
+            <reader ref="HardwareReader"/>
+            <processor ref="HardwareProcessor"/>
+            <writer ref="AssemblyWriter"/>
+        </chunk>    
+    </step>
+</job>
