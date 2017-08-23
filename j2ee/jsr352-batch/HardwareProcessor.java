@@ -5,8 +5,10 @@ import com.khallware.batch.HardwareFactory.Washer;
 import com.khallware.batch.HardwareFactory.Bolt;
 import com.khallware.batch.HardwareFactory.Nut;
 import javax.batch.api.chunk.ItemProcessor;
+import javax.inject.Named;
 import java.util.List;
 
+@Named        // CDI required for mapping batchfile.xml ref to this class
 public class HardwareProcessor implements ItemProcessor
 {
 	public Object processItem(Object input)

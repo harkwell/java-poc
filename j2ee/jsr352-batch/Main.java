@@ -6,30 +6,25 @@ import javax.batch.runtime.BatchStatus;
 
 /**
  * Proof of Concept (PoC) to utilize the java batch api.  It requires a
- * container that implements JSR-000352 such as: jberet, batchee, spring,
- * jboss, jetty, websphere, jbatch, glassfish, wildfly and tomcat.
+ * container that implements JSR-000352 and CDI such as: jberet, batchee,
+ * jboss, spring, jetty, websphere, jbatch, glassfish, wildfly or tomcat.
  *
  * POC_MAVEN_REPO=/tmp/foo
  * rm -rf $POC_MAVEN_REPO
  * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
  *     -DrepoUrl=url \
- *     -Dartifact=javax.batch:javax.batch-api:1.0.1
- * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
- *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *     -DrepoUrl=url \
  *     -Dartifact=org.glassfish.main.extras:glassfish-embedded-all:4.1.2
- * BATCH_JARFILE=$POC_MAVEN_REPO/javax/batch/javax.batch-api/1.0.1/javax.batch-api-1.0.1.jar
  * GLASSFISH_JARFILE=$POC_MAVEN_REPO/org/glassfish/main/extras/glassfish-embedded-all/4.1.2/glassfish-embedded-all-4.1.2.jar
  *
- * javac -cp $BATCH_JARFILE:$GLASSFISH_JARFILE -d /tmp *.java
+ * javac -cp $GLASSFISH_JARFILE -d /tmp *.java
  * echo 'Main-Class: com.khallware.batch.Main' >/tmp/manifest
  * jar cmvf /tmp/manifest /tmp/batch-poc.jar -C /tmp com
  * rm -rf /tmp/com /tmp/manifest
  * mkdir -p /tmp/META-INF/batch-jobs
  * cp batchfile.xml /tmp/META-INF/batch-jobs/
  * cd /tmp
- * java -cp $GLASSFISH_JARFILE:/tmp/:$BATCH_JARFILE:/tmp/batch-poc.jar \
+ * java -cp $GLASSFISH_JARFILE:/tmp/:/tmp/batch-poc.jar \
  *      com.khallware.batch.Main batchfile
  * rm -rf /tmp/batch-poc.jar $POC_MAVEN_REPO /tmp/META-INF
  */
