@@ -5,6 +5,9 @@ import javax.batch.runtime.BatchRuntime;
 import javax.batch.runtime.BatchStatus;
 
 /**
+ * WARNING: this is a non-functioning example (couldn't get job to rise
+ *          above the starting status)
+ *
  * Proof of Concept (PoC) to utilize the java batch api.  It requires a
  * container that implements JSR-000352 and CDI such as: jberet, batchee,
  * jboss, spring, jetty, websphere, jbatch, glassfish, wildfly or tomcat.
