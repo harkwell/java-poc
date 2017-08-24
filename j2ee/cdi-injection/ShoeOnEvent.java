@@ -6,7 +6,6 @@ public class ShoeOnEvent
 
 	public ShoeOnEvent(String side)
 	{
-		System.out.printf("%s shoe event constructed...\n", side);
 		this.side = side;
 	}
 
