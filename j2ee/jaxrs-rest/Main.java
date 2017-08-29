@@ -13,7 +13,6 @@ import java.util.HashSet;
 /**
  * POC_MAVEN_REPO=/tmp/foo
  * rm -rf $POC_MAVEN_REPO
- * mkdir -p /tmp/apis && cp Main.java /tmp/apis
  * LIST="
  *    com.sun.jersey:jersey-server:1.19.3
  *    com.sun.jersey:jersey-grizzly2:1.19.3
@@ -31,8 +30,11 @@ import java.util.HashSet;
  *       -Dartifact=$x
  * done
  * export CLASSPATH=/tmp:$POC_MAVEN_REPO/com/sun/jersey/jersey-server/1.19.3/jersey-server-1.19.3.jar:$POC_MAVEN_REPO/com/sun/jersey/jersey-grizzly2/1.19.3/jersey-grizzly2-1.19.3.jar:$POC_MAVEN_REPO/org/glassfish/grizzly/grizzly-http-server/2.3.28/grizzly-http-server-2.3.28.jar:$POC_MAVEN_REPO/com/sun/jersey/jersey-core/1.19.3/jersey-core-1.19.3.jar:$POC_MAVEN_REPO/asm/asm/3.3.1/asm-3.3.1.jar:$POC_MAVEN_REPO/org/glassfish/grizzly/grizzly-framework/2.3.28/grizzly-framework-2.3.28.jar:$POC_MAVEN_REPO/org/glassfish/grizzly/grizzly-http/2.3.28/grizzly-http-2.3.28.jar:$POC_MAVEN_REPO/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar
- * javac /tmp/apis/Main.java
- * java apis.Main
+ * javac -d /tmp Main.java
+ * echo 'Main-Class: apis.Main' >/tmp/manifest
+ * jar cmvf /tmp/manifest /tmp/jaxrs-poc.jar -C /tmp apis
+ * rm -rf /tmp/apis /tmp/manifest
+ * java -cp $CLASSPATH:/tmp/jaxrs-poc.jar apis.Main
  * curl -i -X GET http://localhost:8080/v1/apis/foo
  */
 public class Main

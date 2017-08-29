@@ -1,10 +1,17 @@
+package com.khallware.poc.socket;
+
 import java.net.Socket;
 
 /**
  * Proof of Concept (PoC) to check availability of a port on a server.
- * cp Main.java /tmp
- * javac /tmp/Main.java
- * java -cp /tmp Main localhost 80
+ *
+ * javac -d /tmp Main.java
+ * echo 'Main-Class: com.khallware.poc.socket.Main' >/tmp/manifest
+ * jar cmvf /tmp/manifest /tmp/socket-poc.jar -C /tmp com
+ * rm -rf /tmp/com /tmp/manifest
+ * java -jar /tmp/socket-poc.jar www.google.com 80
+ * rm /tmp/socket-poc.jar
+ *
  */
 public class Main
 {

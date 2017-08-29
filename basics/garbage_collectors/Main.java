@@ -1,14 +1,19 @@
+package com.khallware.poc.gc;
+
 import java.lang.management.GarbageCollectorMXBean;
 import java.lang.management.ManagementFactory;
 
 /**
  * This PoC shows how to show information for the garbage collectors.
  *
- * cp Main.java /tmp
- * javac /tmp/Main.java 
- * java -cp /tmp/ Main
- * java -cp /tmp/ -XX:+UseConcMarkSweepGC Main
- * java -cp /tmp/ -XX:+UseG1GC Main
+ * javac -d /tmp Main.java
+ * echo 'Main-Class: com.khallware.poc.gc.Main' >/tmp/manifest
+ * jar cmvf /tmp/manifest /tmp/gc-poc.jar -C /tmp com
+ * rm -rf /tmp/com /tmp/manifest
+ * java -jar /tmp/gc-poc.jar
+ * java -jar /tmp/gc-poc.jar -XX:+UseConcMarkSweepGC
+ * java -jar /tmp/gc-poc.jar -XX:+UseG1GC
+ * rm /tmp/gc-poc.jar
  */
 public class Main
 {

@@ -1,3 +1,5 @@
+package com.khallware.poc.echosvr;
+
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
@@ -6,10 +8,14 @@ import java.net.Socket;
 
 /**
  * Proof of Concept (PoC) to implement a single-threaded echo server in java.
- * cp Main.java /tmp
- * javac /tmp/Main.java
- * java -cp /tmp Main 7777 2>/dev/null
+ *
+ * javac -d /tmp Main.java
+ * echo 'Main-Class: com.khallware.poc.echosvr.Main' >/tmp/manifest
+ * jar cmvf /tmp/manifest /tmp/echosvr-poc.jar -C /tmp com
+ * rm -rf /tmp/com /tmp/manifest
+ * java -jar /tmp/echosvr-poc.jar 7777 2>/dev/null
  * echo hello world |nc localhost 7777
+ * rm /tmp/echosvr-poc.jar
  */
 public class Main
 {

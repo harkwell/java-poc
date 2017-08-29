@@ -1,10 +1,14 @@
+package com.khallware.poc.generics;
+
 import java.util.List;
 
 /**
- * cp Main.java /tmp
- * javac /tmp/Main.java
- * java -cp /tmp Main
- *
+ * javac -d /tmp Main.java
+ * echo 'Main-Class: com.khallware.poc.generics.Main' >/tmp/manifest
+ * jar cmvf /tmp/manifest /tmp/generics-poc.jar -C /tmp com
+ * rm -rf /tmp/com /tmp/manifest
+ * java -jar /tmp/generics-poc.jar
+ * rm /tmp/generics-poc.jar
  */
 public class Main
 {

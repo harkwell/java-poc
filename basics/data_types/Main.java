@@ -1,10 +1,14 @@
+package com.khallware.poc.datatypes;
+
 import java.lang.reflect.Method;
 
 /**
- * cp Main.java /tmp
- * javac /tmp/Main.java
- * java -cp /tmp Main
- *
+ * javac -d /tmp Main.java
+ * echo 'Main-Class: com.khallware.poc.datatypes.Main' >/tmp/manifest
+ * jar cmvf /tmp/manifest /tmp/datatypes-poc.jar -C /tmp com
+ * rm -rf /tmp/com /tmp/manifest
+ * java -jar /tmp/datatypes-poc.jar
+ * rm /tmp/datatypes-poc.jar
  */
 public class Main
 {

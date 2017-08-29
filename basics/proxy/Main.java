@@ -1,3 +1,5 @@
+package com.khallware.proxy;
+
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.ServerSocket;
@@ -5,9 +7,14 @@ import java.net.Socket;
 
 /**
  * Proof of Concept (PoC) to pass data from one local IP port to destination.
- * cp Main.java /tmp
- * javac /tmp/Main.java
- * java -cp /tmp Main 4444 localhost 80
+ *
+ * javac -d /tmp Main.java
+ * echo 'Main-Class: com.khallware.proxy.Main' >/tmp/manifest
+ * jar cmvf /tmp/manifest /tmp/proxy-poc.jar -C /tmp com
+ * rm -rf /tmp/com /tmp/manifest
+ * java -jar /tmp/proxy-poc.jar 4444 www.google.com 80
+ * rm /tmp/proxy-poc.jar
+ *
  */
 public class Main
 {

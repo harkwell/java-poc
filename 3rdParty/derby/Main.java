@@ -1,17 +1,26 @@
+package com.khallware.poc.derby;
+
 /**
  * A Proof of Concept for the java derby embedded database.
  *
  * BUILD:
-
-rm -rf /tmp/foo
-mkdir -p /tmp/foo && export MY_M2_OPTS="-Dmaven.repo.local=/tmp/foo"
-mvn $MY_M2_OPTS org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
-    -DrepoUrl=https://mvnrepository.com/ \
-    -Dartifact=org.apache.derby:derby:10.8.3.0
-cp Main.java /tmp
-javac -cp /tmp/foo/org/apache/derby/derby/10.8.3.0/derby-10.8.3.0.jar /tmp/Main.java
-java -cp /tmp/foo/org/apache/derby/derby/10.8.3.0/derby-10.8.3.0.jar:/tmp Main "some text"
-
+ *
+ * POC_MAVEN_REPO=/tmp/foo
+ * rm -rf $POC_MAVEN_REPO
+ * mkdir -p $POC_MAVEN_REPO
+ * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
+ *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
+ *     -DrepoUrl=https://mvnrepository.com/ \
+ *     -Dartifact=org.apache.derby:derby:10.8.3.0
+ * DERBY_JAR=$(find $POC_MAVEN_REPO -name \*derby\*jar)
+ * javac -d /tmp -cp $DERBY_JAR Main.java
+ * echo 'Main-Class: com.khallware.poc.derby.Main' >/tmp/manifest
+ * jar cmvf /tmp/manifest /tmp/derby-poc.jar -C /tmp com
+ * rm -rf /tmp/com /tmp/manifest
+ * 
+ * java -cp $DERBY_JAR:/tmp/derby-poc.jar com.khallware.poc.derby.Main \
+ *          "some text"
+ * rm -rf derby* notes.derby/ /tmp/derby-poc.jar $POC_MAVEN_REPO
  *
  */
 

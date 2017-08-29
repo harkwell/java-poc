@@ -1,3 +1,5 @@
+package com.khallware.poc.serialization;
+
 import java.io.Serializable;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -7,10 +9,12 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 /**
- * cp Main.java /tmp
- * javac /tmp/Main.java
- * java -cp /tmp Main
- *
+ * javac -d /tmp Main.java
+ * echo 'Main-Class: com.khallware.poc.serialization.Main' >/tmp/manifest
+ * jar cmvf /tmp/manifest /tmp/serialization-poc.jar -C /tmp com
+ * rm -rf /tmp/com /tmp/manifest
+ * java -jar /tmp/serialization-poc.jar
+ * rm /tmp/serialization-poc.jar
  */
 public class Main
 {

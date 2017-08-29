@@ -1,3 +1,5 @@
+package com.khallware.poc.core;
+
 import java.util.Collections;
 import java.util.Collection;
 import java.util.Queue;
@@ -6,10 +8,12 @@ import java.util.Set;
 import java.util.Map;
 
 /**
- * cp Main.java /tmp
- * javac /tmp/Main.java
- * java -cp /tmp Main
- *
+ * javac -d /tmp Main.java
+ * echo 'Main-Class: com.khallware.poc.core.Main' >/tmp/manifest
+ * jar cmvf /tmp/manifest /tmp/javase-core-poc.jar -C /tmp com
+ * rm -rf /tmp/com /tmp/manifest
+ * java -jar /tmp/javase-core-poc.jar
+ * rm /tmp/javase-core-poc.jar
  */
 public class Main
 {
