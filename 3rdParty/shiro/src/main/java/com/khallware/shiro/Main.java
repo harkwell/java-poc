@@ -69,19 +69,32 @@ public class Main
 				.getInstance());
 	}
 
+	private static void enforce(Subject subject, String operation)
+	{
+		if (!subject.isPermitted(operation)) {
+			String name = subject.getPrincipal().toString();
+			throw new RuntimeException(
+				String.format("%s not permitted to perform %s",
+					name, operation)
+			);
+		}
+	}
+
 	public static void main(String... args) throws Exception
 	{
 		Calculator calc = new Calculator();
 		List<Integer> terms = parseArgs(args);
 		Subject subject = null;
+		String operation = args[2].toLowerCase();
 		initialize();
 		enforceLogin(args[0], args[1]);
 		subject = SecurityUtils.getSubject();
 		System.out.printf("user \"%s\" logged in...\n",
 			subject.getPrincipal().toString());
 		dumpProfile(subject);
+		enforce(subject, operation);
 
-		switch (args[2].toLowerCase()) {
+		switch (operation) {
 		case "add":
 			System.out.printf("sum is: %d\n", calc.add(terms));
 			break;
