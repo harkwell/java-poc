@@ -1,5 +1,11 @@
 package com.khallware.poc.derby;
 
+import java.sql.Statement;
+import java.sql.ResultSet;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.io.File;
+
 /**
  * A Proof of Concept for the java derby embedded database.
  *
@@ -23,13 +29,6 @@ package com.khallware.poc.derby;
  * rm -rf derby* notes.derby/ /tmp/derby-poc.jar $POC_MAVEN_REPO
  *
  */
-
-import java.sql.Statement;
-import java.sql.ResultSet;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.io.File;
-
 public class Main
 {
 	private static Connection connection = null;

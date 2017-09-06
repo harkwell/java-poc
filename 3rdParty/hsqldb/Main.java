@@ -1,5 +1,8 @@
 package com.khallware.poc.hsqldb;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+
 /**
  * A Proof of Concept for the hsqldb in-memory hypersonic database.
  *
@@ -23,10 +26,6 @@ package com.khallware.poc.hsqldb;
  * rm -rf /tmp/hsqldb-poc.jar $POC_MAVEN_REPO mytest*
  *
  */
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-
 public class Main
 {
 	public static void main(String... args) throws Exception

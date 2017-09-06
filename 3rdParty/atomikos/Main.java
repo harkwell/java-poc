@@ -1,5 +1,12 @@
 package com.khallware.poc.jta;
 
+import com.atomikos.icatch.jta.UserTransactionManager;
+import com.atomikos.jdbc.AtomikosDataSourceBean;
+import java.util.Properties;
+import java.sql.Connection;
+import javax.sql.DataSource;
+//import javax.jta.TransactionManager;
+
 /**
  * A Proof of Concept for the java atomikos transaction manager.
  *
@@ -34,14 +41,6 @@ package com.khallware.poc.jta;
  * rm -rf /tmp/jta-poc.jar $POC_MAVEN_REPO
  *
  */
-
-import com.atomikos.icatch.jta.UserTransactionManager;
-import com.atomikos.jdbc.AtomikosDataSourceBean;
-import java.util.Properties;
-import java.sql.Connection;
-import javax.sql.DataSource;
-//import javax.jta.TransactionManager;
-
 public class Main
 {
 	public static AtomikosDataSourceBean init()

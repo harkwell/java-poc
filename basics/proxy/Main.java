@@ -18,6 +18,20 @@ import java.net.Socket;
  */
 public class Main
 {
+	private static void flow(InputStream is, OutputStream os)
+	{
+		try {
+			for (int ch=0; (ch = is.read()) != -1;) {
+				os.write(ch);
+			}
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			System.out.printf("%s\n", ""+e);
+			System.exit(1);
+		}
+	}
+
 	public static void main(String... args) throws Exception
 	{
 		int srcPort = Integer.parseInt(args[0]);
@@ -36,19 +50,5 @@ public class Main
 			}
 		}).start();
 		flow(dest.getInputStream(), src.getOutputStream());
-	}
-
-	private static void flow(InputStream is, OutputStream os)
-	{
-		try {
-			for (int ch=0; (ch = is.read()) != -1;) {
-				os.write(ch);
-			}
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-			System.out.printf("%s\n", ""+e);
-			System.exit(1);
-		}
 	}
 }

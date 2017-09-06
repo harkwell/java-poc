@@ -18,8 +18,6 @@ import java.io.IOException;
  */
 public class Main
 {
-	/**
-	 */
 	public static class MySerializable implements Serializable
 	{
 		private String token1;
