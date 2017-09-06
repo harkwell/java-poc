@@ -1,0 +1,33 @@
+{
+	"opticPower": 0,
+	"cornea": {
+		"thickness": 0.000000,
+		"curvature": 0.000000,
+		"refractiveIndex": 0.000000,
+		"pupil": {
+			"size": 1.500000
+		},
+		"iris": {
+			"stiffness": 0.000000
+		}
+	},
+	"sclera": {
+		"density": 0.000000,
+		"choroid": {
+			"elasticity": 0,
+			"retina": {
+				"rods": {},
+				"cones": {},
+				"lens": {
+					"thickness": 4.100000
+				},
+				"vitreous": {
+					"volume": 0,
+					"macula": {
+						"reninReleaseRate": 0
+					}
+				}
+			}
+		}
+	}
+}
