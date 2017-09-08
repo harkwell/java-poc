@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Fingerprints>
+	<Fingerprint name="Hall,Kevin" date="20170906-18:00:00">
+		<Minutiae point="100,100" type="island"/>
+		<Minutiae point="120,200" type="spur"/>
+		<Minutiae point="410,150" type="core"/>
+	</Fingerprint>
+	<Fingerprint name="Hall,Carrie" date="20170906-18:30:00">
+		<Minutiae point="210,110" type="delta"/>
+		<Minutiae point="500,370" type="bifurcation"/>
+		<Minutiae point="359,053" type="ending"/>
+	</Fingerprint>
+</Fingerprints>
