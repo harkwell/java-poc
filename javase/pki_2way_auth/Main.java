@@ -16,8 +16,7 @@ import java.net.Socket;
 /**
  * Proof of Concept (PoC) to connect to a site that utilizes two-way
  * authentication of public key infrastructure (PKI).
- * cp Main.java /tmp
- * javac /tmp/Main.java
+ * javac -d /tmp/ Main.java
  * java -cp /tmp Main www.google.com
  * java -cp /tmp Main ss.tvc.tsa.dhs.gov 443
  */

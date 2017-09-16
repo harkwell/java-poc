@@ -4,8 +4,7 @@ import java.io.BufferedReader;
 /**
  * This PoC shows how to use the java to read input from the user.
  *
- * cp ReadStdin2.java /tmp
- * javac /tmp/ReadStdin2.java 
+ * javac -d /tmp/ ReadStdin2.java 
  * cat /etc/passwd |java -cp /tmp/ ReadStdin2
  * java -cp /tmp/ ReadStdin2 # type some stuff... hit ctrl-d to finish
  *

@@ -1,10 +1,8 @@
 #############
 ### BUILD ###
 #############
-cp Server.java /tmp
-cp Main.java /tmp
-javac /tmp/Server.java
-javac /tmp/Main.java
+javac -d /tmp/ Server.java
+javac -d /tmp/ Main.java
 
 ##############
 ### SERVER ###

@@ -15,8 +15,7 @@ import java.net.Socket;
  * Proof of Concept (PoC) to serve an echo site that utilizes two-way
  * authentication of public key infrastructure (PKI).
  *
- * cp Server.java /tmp
- * javac /tmp/Server.java
+ * javac -d /tmp/ Server.java
  * keytool -keystore /tmp/certs.jks -genkey -alias khallware \
  *    -dname 'CN=khallware.com,L=Franklin,ST=TN,C=US'
  * keytool -list -keystore /tmp/certs.jks
