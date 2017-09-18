@@ -22,8 +22,7 @@ import org.junit.jupiter.api.Test;
  * done
  * RUNNER_JAR=$(find $POC_MAVEN_REPO -name \*console\*jar)
  * JUNIT_JAR=$(find $POC_MAVEN_REPO -name \*jupiter-api\*jar)
- * JAR1=$(find $POC_MAVEN_REPO -name \*params\*jar)
- * javac -d /tmp -cp $JUNIT_JAR:$JAR1 3rdParty/junit5/Main.java # *.java
+ * javac -d /tmp -cp $JUNIT_JAR:$RUNNER_JAR 3rdParty/junit5/*.java
  * echo 'Main-Class: com.khallware.poc.junit.Main' >/tmp/manifest
  * jar cmvf /tmp/manifest /tmp/junit-poc.jar -C /tmp com
  * export CLASSPATH=/tmp/junit-poc.jar:$RUNNER_JAR
