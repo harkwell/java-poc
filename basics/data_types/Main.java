@@ -65,6 +65,21 @@ public class Main
 	}
 
 	/**
+	 * This is an interface.  Best practices suggest that one writes first
+	 * an interface and codes to that.  It can define default behavior.
+	 */
+	public static interface MyInterface
+	{
+		public void execute(String arg);
+
+		default void myDefaultImplementation()
+		{
+			execute("");
+			throw new RuntimeException("not yet implemented");
+		}
+	}
+
+	/**
 	 * This is a static nested class.  Using static allows classes external
 	 * to this file access to it.  A member class is an inner class
 	 * (defined within a class) that is not static and only available to
