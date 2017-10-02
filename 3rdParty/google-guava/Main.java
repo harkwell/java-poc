@@ -23,7 +23,7 @@ import java.io.IOException;
  * rm -rf $POC_MAVEN_REPO
  * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *     -DrepoUrl=url \
+ *     -DrepoUrl=https://mvnrepository.com/ \
  *     -Dartifact=com.google.guava:guava:23.0
  * GUAVA_JAR=$(find $POC_MAVEN_REPO -name \*guava\*jar)
  * javac -cp $GUAVA_JAR -d /tmp Main.java

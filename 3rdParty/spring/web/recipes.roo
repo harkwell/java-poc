@@ -1,0 +1,17 @@
+// package names with more than two parts fails to build for some reason
+project setup --topLevelPackage com.khallware
+jpa setup --provider HIBERNATE --database HYPERSONIC_IN_MEMORY
+entity jpa --class ~.domain.Ingredient
+field string --fieldName name --notNull --sizeMax 1024
+repository jpa --entity ~.domain.Ingredient
+service --entity ~.domain.Ingredient
+// entity jpa --class ~.domain.Recipe
+// field string --fieldName name --notNull --sizeMax 1024
+// field string --fieldName directions --notNull --sizeMax 1024
+// field set --fieldName ingredients --type ~.domain.Ingredient
+// service --all
+// repository jpa --all
+web mvc setup
+web mvc view setup --type THYMELEAF
+web mvc controller --all --responseType THYMELEAF
+web mvc controller --all --pathPrefix /recipes
