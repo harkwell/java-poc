@@ -16,7 +16,7 @@ import javax.batch.runtime.BatchStatus;
  * rm -rf $POC_MAVEN_REPO
  * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *     -DrepoUrl=url \
+ *     -DrepoUrl=https://mvnrepository.com/ \
  *     -Dartifact=org.glassfish.main.extras:glassfish-embedded-all:4.1.2
  * GLASSFISH_JARFILE=$POC_MAVEN_REPO/org/glassfish/main/extras/glassfish-embedded-all/4.1.2/glassfish-embedded-all-4.1.2.jar
  *

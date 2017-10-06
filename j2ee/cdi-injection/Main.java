@@ -11,11 +11,11 @@ import org.jboss.weld.environment.se.WeldContainer;
  * rm -rf $POC_MAVEN_REPO
  * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *     -DrepoUrl=url \
+ *     -DrepoUrl=https://mvnrepository.com/ \
  *     -Dartifact=javax.inject:javax.inject:1
  * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *     -DrepoUrl=url \
+ *     -DrepoUrl=https://mvnrepository.com/ \
  *     -Dartifact=org.jboss.weld.se:weld-se-shaded:3.0.0.Final
  * INJECT_JAR=$(find $POC_MAVEN_REPO -name \*inject\*jar)
  * WELD_JAR=$(find $POC_MAVEN_REPO -name \*weld\*jar)

@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
  * rm -rf $POC_MAVEN_REPO
  * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *     -DrepoUrl=url \
+ *     -DrepoUrl=https://mvnrepository.com/ \
  *     -Dartifact=org.apache.commons:commons-lang3:3.6
  * APACHE_JAR=$(find $POC_MAVEN_REPO -name \*lang\*jar)
  * javac -cp $APACHE_JAR -d /tmp Main.java

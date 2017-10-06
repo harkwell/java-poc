@@ -17,7 +17,7 @@ import org.quartz.impl.StdSchedulerFactory;
  * for dep in org.quartz-scheduler:quartz:2.3.0 org.slf4j:slf4j-api:1.7.25; do
  *    mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *        org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *        -DrepoUrl=url \
+ *        -DrepoUrl=https://mvnrepository.com/ \
  *        -Dartifact=$dep
  * done
  * QUARTZ_JAR=$(find $POC_MAVEN_REPO -name \*quartz\*jar)

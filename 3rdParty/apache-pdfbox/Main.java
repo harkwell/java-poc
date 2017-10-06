@@ -18,7 +18,7 @@ import javax.imageio.ImageIO;
  * rm -rf $POC_MAVEN_REPO
  * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *     -DrepoUrl=url \
+ *     -DrepoUrl=https://mvnrepository.com/ \
  *     -Dartifact=org.apache.pdfbox:pdfbox:2.0.7
  * PDFBOX_JAR=$(find $POC_MAVEN_REPO -name \*pdfbox\*jar)
  * javac -cp $PDFBOX_JAR -d /tmp Main.java
@@ -28,7 +28,7 @@ import javax.imageio.ImageIO;
  *
  * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *     -DrepoUrl=url \
+ *     -DrepoUrl=https://mvnrepository.com/ \
  *     -Dartifact=org.apache.pdfbox:fontbox:2.0.7
  * JAR1=$(find $POC_MAVEN_REPO -name \*logging-1.0.4\*jar)
  * JAR2=$(find $POC_MAVEN_REPO -name \*fontbox\*jar)

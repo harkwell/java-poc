@@ -13,7 +13,7 @@ import java.util.Locale;
  * rm -rf $POC_MAVEN_REPO
  * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *     -DrepoUrl=url \
+ *     -DrepoUrl=https://mvnrepository.com/ \
  *     -Dartifact=org.apache.commons:commons-text:1.1
  * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \

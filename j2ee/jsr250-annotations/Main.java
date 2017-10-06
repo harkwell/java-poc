@@ -10,7 +10,7 @@ import java.util.Map;
  * rm -rf $POC_MAVEN_REPO
  * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *     -DrepoUrl=url \
+ *     -DrepoUrl=https://mvnrepository.com/ \
  *     -Dartifact=javax.annotation:javax.annotation-api:1.3
  * ANNOT_JAR=$(find $POC_MAVEN_REPO -name \*annot\*jar)
  * javac -d /tmp -cp $ANNOT_JAR Main.java

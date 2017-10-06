@@ -16,7 +16,7 @@ import javax.mail.Session;
  * rm -rf $POC_MAVEN_REPO
  * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *     -DrepoUrl=url \
+ *     -DrepoUrl=https://mvnrepository.com/ \
  *     -Dartifact=javax.mail:mail:1.4.7
  * MAIL_JARFILE=$POC_MAVEN_REPO/javax/mail/mail/1.4.7/mail-1.4.7.jar
  *

@@ -14,7 +14,7 @@ POC_MAVEN_REPO=/tmp/foo
 rm -rf $POC_MAVEN_REPO
 mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
-    -DrepoUrl=url \
+    -DrepoUrl=https://mvnrepository.com/ \
     -Dartifact=org.eclipse.jetty:jetty-runner:9.4.6.v20170531
 
 git clone https://github.com/harkwell/java-poc.git

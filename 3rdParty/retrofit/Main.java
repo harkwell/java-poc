@@ -25,7 +25,7 @@ import java.util.List;
  *       com.squareup.retrofit2:converter-jackson:2.3.0; do
  *    mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *        org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *        -DrepoUrl=url \
+ *        -DrepoUrl=https://mvnrepository.com/ \
  *        -Dartifact=$dep
  * done
  * RETROFIT_JAR=$(find $POC_MAVEN_REPO -name \*retrofit\*jar)
@@ -41,7 +41,7 @@ import java.util.List;
  * JAR6=$(find $POC_MAVEN_REPO -name \*jackson-annotations\*jar)
  * export CLASSPATH=/tmp/retrofit-poc.jar:$RETROFIT_JAR:$JAR1:$JAR2:$JAR3:$JAR4:$JAR5:$JAR6
  * java -cp $CLASSPATH com.khallware.poc.retrofit.Main https://localhost:8080/
- * rm -rf /tmp/com /tmp/manifest /tmp/junit-poc.jar
+ * rm -rf /tmp/com /tmp/manifest /tmp/retrofit-poc.jar
  *
  */
 public class Main

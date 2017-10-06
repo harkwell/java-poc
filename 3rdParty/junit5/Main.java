@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
  *       org.junit.jupiter:junit-jupiter-params:5.0.0-M4; do
  *    mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *        org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *        -DrepoUrl=url \
+ *        -DrepoUrl=https://mvnrepository.com/ \
  *        -Dartifact=$dep
  * done
  * RUNNER_JAR=$(find $POC_MAVEN_REPO -name \*console\*jar)

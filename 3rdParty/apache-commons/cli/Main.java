@@ -17,7 +17,7 @@ import org.apache.commons.cli.Option;
  * rm -rf $POC_MAVEN_REPO
  * mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
  *     org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
- *     -DrepoUrl=url \
+ *     -DrepoUrl=https://mvnrepository.com/ \
  *     -Dartifact=commons-cli:commons-cli:1.4
  * CLI_JAR=$(find $POC_MAVEN_REPO -name \*cli-1.4\*jar)
  * javac -cp $CLI_JAR -d /tmp Main.java
