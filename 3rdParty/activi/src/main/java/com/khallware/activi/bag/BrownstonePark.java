@@ -56,8 +56,23 @@ public class BrownstonePark implements Park, EventHandler<SeasonEndEvent>
 		return(bears);
 	}
 
+	public Ranger getRanger()
+	{
+		return(ranger);
+	}
+
 	public void setFocus(Item item)
 	{
 		this.item = item;
+	}
+
+	public HumphreyBear getHumphreyBear()
+	{
+		return(humphrey);
+	}
+
+	public SmokeyBear getSmokeyBear()
+	{
+		return(smokey);
 	}
 }

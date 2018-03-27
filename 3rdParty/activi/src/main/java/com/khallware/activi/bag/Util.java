@@ -35,12 +35,10 @@ public class Util
 	public static List<Bear> generateBear()
 	{
 		List<Bear> retval = new ArrayList<>();
-		retval.add(new HumphreyBear());
-		retval.add(new SmokeyBear());
 		retval.add(new BrownstoneBear("George"));
 		retval.add(new BrownstoneBear("Suzie"));
 		retval.add(new BrownstoneBear("Dan"));
-		retval.add(new BrownstoneBear("Leohold"));
+		retval.add(new BrownstoneBear("Leopold"));
 		retval.add(new BrownstoneBear("Frank"));
 		return(retval);
 	}

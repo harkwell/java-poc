@@ -10,6 +10,7 @@ public class SeasonEndEvent implements Event<String>
 	static {
 		litter.add("rag");
 		litter.add("papers");
+		litter.add("banana");
 	};
 
 	public static final List<String> getLitter()

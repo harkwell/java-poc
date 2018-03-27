@@ -1,5 +1,6 @@
 package com.khallware.activi.bag;
 
+import java.util.List;
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
@@ -28,7 +29,7 @@ public class BossRanger implements Ranger
 		switch (park.getName()) {
 		case "Brownstone National Park":
 			retval = HumphreyHop.getLyrics(
-				park.getSections().get(0));
+				locateValidSection(park.getSections()));
 			break;
 		}
 		return(retval);
@@ -64,5 +65,24 @@ public class BossRanger implements Ranger
 		logger.info("You {} bears can have some {} if you clean up "
 			+"your section of {}!", park.getBears().size(),
 			getMotivation(), park.getName());
+	}
+
+	private static Section locateValidSection(List<Section> sections)
+	{
+		Section retval = null;
+
+		for (Section section : sections) {
+			if (section.getLitter().size() > 2) {
+				retval = section;
+				break;
+			}
+		}
+		String msg = "no section has at least two items of litter";
+
+		if (retval == null) {
+			logger.error(msg);
+			throw new RuntimeException(msg);
+		}
+		return(retval);
 	}
 }
