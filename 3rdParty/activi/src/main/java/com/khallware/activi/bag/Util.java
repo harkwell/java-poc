@@ -14,7 +14,7 @@ public class Util
 			if (idx == choice) {
 				continue;
 			}
-			Section section = park.getSections().get(idx-1);
+			Section section = park.getSections().get(idx);
 			park.getSections().get(choice).getLitter().addAll(
 				section.getLitter());
 			section.getLitter().clear();
