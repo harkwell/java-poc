@@ -1,5 +1,7 @@
 package com.khallware.ioc;
 
+//KDH import org.aspectj.weaver.loadtime.Agent;
+
 public class Main
 {
 	public static void main(String... args) throws Exception
@@ -10,5 +12,6 @@ public class Main
 		obj2.method1();
 		obj1.method2();
 		obj2.method2();
+		//KDH Object obj3 = Agent.getInstrumentation();
 	}
 }

@@ -16,8 +16,15 @@ mvn -Dmaven.repo.local=$POC_MAVEN_REPO package assembly:single
 #rm -rf POC_MAVEN_REPO
 
 # load-time weaving
+mvn org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
+    -Dmaven.repo.local=$POC_MAVEN_REPO \
+    -DrepoUrl=https://mvnrepository.com/ \
+    -Dartifact=org.aspectj:aspectjweaver:1.8.5
+
 JAR1=$(find $POC_MAVEN_REPO -name aspectjrt\*jar)
-javac -g -d /tmp -cp $JAR1 src/main/java/com/khallware/ioc/*java
+JAR2=$(find $POC_MAVEN_REPO -name aspectjweaver\*jar)
+sed -i -e 's#//KDH ##g' src/main/java/com/khallware/ioc/Main.java
+javac -g -d /tmp -cp $JAR1:$JAR2 src/main/java/com/khallware/ioc/*java
 ```
 
 Execute
@@ -34,12 +41,8 @@ cat <<-EOF >/tmp/META-INF/aop.xml
     </aspects>
 </aspectj>
 EOF
-mvn org.apache.maven.plugins:maven-dependency-plugin:2.1:get \
-    -Dmaven.repo.local=$POC_MAVEN_REPO \
-    -DrepoUrl=https://mvnrepository.com/ \
-    -Dartifact=org.aspectj:aspectjweaver:1.8.5
 
 java -cp /tmp com.khallware.ioc.Main
-JAR2=$(find $POC_MAVEN_REPO -name aspectjweaver\*jar)
+java -cp /tmp:$JAR2 com.khallware.ioc.Main
 java -javaagent:$JAR2 -cp /tmp com.khallware.ioc.Main
 ```
