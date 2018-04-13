@@ -4,7 +4,10 @@ import java.util.Map;
 
 /**
  * The strategy pattern facilitates the dynamic changing of algorithms that
- * are applied to a given instance.
+ * are applied to a given instance. The syntax is very similar to the bridge
+ * pattern but is intended to be behavioral (as opposed to structural). Use
+ * this pattern when multiple version of an algorithm are required, or to
+ * avoid switch statements, or when run-time behavioral changes are needed.
  *
  * Build:
  * javac -d /tmp Main.java

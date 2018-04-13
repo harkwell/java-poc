@@ -20,3 +20,4 @@ Popular patterns include:
 * [Strategy](strategy) - Strategy Pattern
 * [Decorator](decorator) - Decorator Pattern
 * [Injection](injection) - Injection Pattern
+* [Bridge](bridge) - Bridge Pattern
