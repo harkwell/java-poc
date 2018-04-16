@@ -35,5 +35,5 @@ grade0 = addition
 grade1 = subtraction
 grade1 = multiplication, division
 EOF
-java -jar target/myshiro-poc-0.1-jar-with-dependencies.jar khall khall add 1 4 6 4
+java -jar target/myshiro-poc-0.1.jar khall khall add 1 4 6 4
 ```
