@@ -15,7 +15,7 @@ Build
 ```shell
 SHIRO_MAVEN_REPO=/tmp/foo
 rm -rf $SHIRO_MAVEN_REPO
-mvn -Dmaven.repo.local=$SHIRO_MAVEN_REPO package assembly:single
+mvn -Dmaven.repo.local=$SHIRO_MAVEN_REPO package
 ```
 
 Run
