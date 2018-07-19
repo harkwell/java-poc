@@ -11,7 +11,7 @@ Build
 ---------------
 
 ```shell
-git clone https://github.com/harkwell/java-poc.git
+git clone https://gitlab.com/harkwell/java-poc.git
 cd java-poc/3rdParty/hibernate
 POC_MAVEN_REPO=/tmp/foo
 rm -rf $POC_MAVEN_REPO && mkdir -p $POC_MAVEN_REPO

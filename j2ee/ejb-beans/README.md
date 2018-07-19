@@ -22,7 +22,7 @@ sudo chmod -R go+r $OPENEJB_HOME
 sudo chmod 777 $OPENEJB_HOME/conf/
 sudo mkdir -f $OPENEJB_HOME/txlog $OPENEJB_HOME/logs $OPENEJB_HOME/apps
 sudo chmod 777 $OPENEJB_HOME/txlog $OPENEJB_HOME/logs $OPENEJB_HOME/apps
-git clone https://github.com/harkwell/java-poc.git && cd java-poc/ejb-beans
+git clone https://gitlab.com/harkwell/java-poc.git && cd java-poc/ejb-beans
 javac -cp $OPENEJB_HOME/lib/javaee-api-5.0-1.jar -d . MyBeans.java
 jar cvf mybeans.jar com && rm -rf com/
 ```

@@ -16,7 +16,7 @@ Building
 ---------------
 
 ```shell
-cd /tmp/ && git clone https://github.com/harkwell/java-poc.git
+cd /tmp/ && git clone https://gitlab.com/harkwell/java-poc.git
 cd java-poc/basics/oop && javac `find . -name \*.java`
 echo 'Main-Class: com.khallware.life.Main' >manifest
 jar cmvf manifest ../life.jar ./com

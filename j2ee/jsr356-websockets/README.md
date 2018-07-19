@@ -10,7 +10,7 @@ Build/Run
 ---------------
 
 ```shell
-git clone https://github.com/harkwell/java-poc.git
+git clone https://gitlab.com/harkwell/java-poc.git
 cd java-poc/j2ee/jsr356-websockets
 
 # Server

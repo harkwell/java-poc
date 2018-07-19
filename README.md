@@ -1,3 +1,6 @@
+NOTICE: https://github.com DEPRECATION WARNING... USE https://gitlab.com/harkwell/java-poc
+=================
+
 Khallware (Java Proofs-of-Concept)
 =================
 Overview

@@ -11,7 +11,7 @@ Build
 ---------------
 
 ```shell
-git clone https://github.com/harkwell/java-poc.git
+git clone https://gitlab.com/harkwell/java-poc.git
 cd java-poc/basics/modularity
 javac -version # make sure we're at java9
 javac -d /tmp/mods/ module-info.java Main.java

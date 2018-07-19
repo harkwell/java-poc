@@ -17,7 +17,7 @@ mvn -Dmaven.repo.local=$POC_MAVEN_REPO \
     -DrepoUrl=https://mvnrepository.com/ \
     -Dartifact=org.eclipse.jetty:jetty-runner:9.4.6.v20170531
 
-git clone https://github.com/harkwell/java-poc.git
+git clone https://gitlab.com/harkwell/java-poc.git
 cd java-poc/jsf-faces && mvn -Dmaven.repo.local=$POC_MAVEN_REPO package
 ls -ld target/jsf-poc-0.0.1.war
 ```
